@@ -21,10 +21,10 @@ async function fetchQuote() {
     const response = await fetch("https://dummyjson.com/quotes");
     const data = await response.json();
     let i = randome(data.quotes.length);
-    console.log(data.quotes[i]);
+    // console.log(data.quotes[i]);
 
     span.textContent = data.quotes[i].quote;
-    author.textContent = "- " + data.quotes[i].author;
+    author.textContent = "💕 " + data.quotes[i].author;
     generateRandomColor();
   } catch (error) {
     console.error("Error fetching quote:", error);
@@ -32,8 +32,6 @@ async function fetchQuote() {
   }
 }
 fetchQuote();
-
-
 
 // Fetching a new quote when the button is clicked
 button.addEventListener("click", fetchQuote);
